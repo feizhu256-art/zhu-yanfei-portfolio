@@ -1,0 +1,45 @@
+.border-glow-card {
+  --pointer-x: 50%;
+  --pointer-y: 50%;
+  position: relative;
+  isolation: isolate;
+  border: 1px solid rgba(255, 255, 255, 0.82);
+  border-radius: 20px;
+  background: linear-gradient(145deg, rgba(248, 253, 255, 0.83), rgba(218, 237, 255, 0.72));
+  box-shadow: 0 16px 34px rgba(32, 86, 148, 0.12);
+  transition: box-shadow 260ms ease, transform 420ms cubic-bezier(.2, 1.5, .35, 1);
+}
+
+.border-glow-card::before {
+  position: absolute;
+  z-index: -1;
+  inset: -2px;
+  border-radius: inherit;
+  background: radial-gradient(220px circle at var(--pointer-x) var(--pointer-y), #ff8bc8, #7edfff 46%, transparent 72%);
+  content: '';
+  opacity: 0;
+  transition: opacity 240ms ease;
+}
+
+.border-glow-card:hover,
+.border-glow-card:focus-within {
+  box-shadow: 0 24px 54px rgba(47, 128, 237, 0.22);
+  transform: translateY(-9px) scale(1.018);
+}
+
+.border-glow-card:hover::before,
+.border-glow-card:focus-within::before {
+  opacity: 1;
+}
+
+.border-glow-inner {
+  height: 100%;
+  overflow: hidden;
+  border-radius: inherit;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .border-glow-card { transition: none; }
+  .border-glow-card:hover,
+  .border-glow-card:focus-within { transform: none; }
+}

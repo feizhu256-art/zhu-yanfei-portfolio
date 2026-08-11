@@ -1,0 +1,19 @@
+.tilted-card {
+  height: 100%;
+  perspective: 900px;
+  transform-style: preserve-3d;
+}
+
+.tilted-card__inner {
+  height: 100%;
+  transform-style: preserve-3d;
+  transform: rotateX(var(--rotate-x, 0deg)) rotateY(var(--rotate-y, 0deg));
+  transition: transform 160ms ease-out;
+  will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tilted-card__inner {
+    transform: none !important;
+  }
+}

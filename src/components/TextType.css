@@ -1,0 +1,24 @@
+.text-type {
+  display: inline-block;
+  white-space: pre-wrap;
+}
+
+.text-type__cursor {
+  display: inline-block;
+  margin-left: 0.08em;
+  color: var(--blue);
+  opacity: 1;
+  animation: text-type-cursor-blink var(--cursor-blink-duration, 0.5s) ease-in-out infinite alternate;
+}
+
+@keyframes text-type-cursor-blink {
+  to { opacity: 0; }
+}
+
+.text-type__cursor--hidden {
+  display: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .text-type__cursor { animation: none; }
+}
