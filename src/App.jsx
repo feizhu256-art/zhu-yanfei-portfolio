@@ -279,7 +279,7 @@ const videoCollections = [
     ['G-style', '/assets/videos/ai-g-style.mp4'],
     ['广西跑酷小游戏', '/assets/videos/ai-parkour.mp4'],
     ['领克 07GT', '/assets/videos/ai-lynk-07gt.mp4'],
-    ['一瓦一木', '/assets/videos/ai-wood.mp4'],
+    ['一瓦一木', 'https://zhu-yanfei-videos-1465406041.cos.ap-guangzhou.myqcloud.com/ai-wood.mp4'],
   ]],
   ['02', '二创剪辑', '素材重组、节奏设计与情绪表达', [
     ['二创作品 01', '/assets/videos/remix-01.mp4'],
@@ -289,15 +289,15 @@ const videoCollections = [
   ]],
   ['03', '口播账号视频', '大学生活选题、文案与短视频包装', [
     ['宿舍关系：边界感比搞好关系重要', '/assets/videos/talk-dorm.mp4'],
-    ['大一最容易挂的课', '/assets/videos/talk-failed-courses.mp4'],
+    ['大一最容易挂的课', 'https://zhu-yanfei-videos-1465406041.cos.ap-guangzhou.myqcloud.com/talk-failed-courses.mp4'],
     ['社团和学生会到底要不要加？', '/assets/videos/talk-clubs.mp4'],
-    ['实习、竞赛、科研、交换到底怎么选？', '/assets/videos/talk-opportunity-choice.mp4'],
+    ['实习、竞赛、科研、交换到底怎么选？', 'https://zhu-yanfei-videos-1465406041.cos.ap-guangzhou.myqcloud.com/talk-opportunity-choice.mp4'],
   ]],
   ['04', '微电影与短片', '叙事剪辑、音乐节奏与情绪氛围', [
-    ['干杯 MV', '/assets/videos/film-cheers-mv.mp4'],
-    ['破茧', '/assets/videos/film-breakthrough.mp4'],
-    ['选择', '/assets/videos/film-choice.mp4'],
-    ['逐光', '/assets/videos/film-light.mp4'],
+    ['干杯 MV', 'https://zhu-yanfei-videos-1465406041.cos.ap-guangzhou.myqcloud.com/film-cheers-mv.mp4'],
+    ['破茧', 'https://zhu-yanfei-videos-1465406041.cos.ap-guangzhou.myqcloud.com/film-breakthrough.mp4'],
+    ['选择', 'https://zhu-yanfei-videos-1465406041.cos.ap-guangzhou.myqcloud.com/film-choice.mp4'],
+    ['逐光', 'https://zhu-yanfei-videos-1465406041.cos.ap-guangzhou.myqcloud.com/film-light.mp4'],
   ]],
 ]
 
