@@ -376,7 +376,7 @@ function Hero() {
     <section className="hero" id="top">
       <video
         className="hero-video"
-        src={loadVideo ? '/assets/hero-desk.mp4' : undefined}
+        src={loadVideo ? 'https://zhu-yanfei-videos-1465406041.cos.ap-guangzhou.myqcloud.com/hero-desk.mp4' : undefined}
         autoPlay
         muted
         loop
