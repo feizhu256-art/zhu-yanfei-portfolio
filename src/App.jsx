@@ -150,7 +150,7 @@ const aiProjects = [
     description:
       '从个人求职与作品展示需求出发，自主规划网站信息架构、内容模块与视觉方向，通过 Codex 辅助完成页面搭建，并根据实际展示效果持续优化内容结构与交互体验。',
     process: ['需求构思', '找视觉参考', '规划模块', 'Codex实现', '测试', '反馈修改', '最终页面'],
-    image: BASE_URL + 'assets/ai/portfolio-home.webp',
+    image: BASE_URL + 'assets/ai/portfolio-home.jpg',
     gallery: [
       BASE_URL + 'assets/ai/portfolio-home.jpg',
       BASE_URL + 'assets/ai/codex-conversation.webp',
