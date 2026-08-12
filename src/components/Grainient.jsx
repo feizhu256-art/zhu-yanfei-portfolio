@@ -33,6 +33,13 @@ export default function Grainient({ color1 = '#d8f6ff', color2 = '#a9c9ff', colo
   useEffect(() => {
     const container = containerRef.current
     if (!container) return
+    // 小屏设备（手机）跳过 WebGL 动画：滚动时持续渲染 WebGL 会拖垮
+    // 移动端浏览器（尤其微信内置内核），导致卡顿甚至滚动位置异常跳顶。
+    // 用静态渐变替代，观感接近且零开销。
+    if (window.matchMedia('(max-width: 767px)').matches) {
+      container.style.background = `linear-gradient(135deg, ${color1} 0%, ${color2} 55%, ${color3} 100%)`
+      return
+    }
     const renderer = new Renderer({ webgl: 2, alpha: true, antialias: false, dpr: Math.min(devicePixelRatio || 1, 1.5) })
     const { gl } = renderer
     const program = new Program(gl, {

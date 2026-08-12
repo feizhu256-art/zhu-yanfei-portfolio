@@ -369,6 +369,9 @@ function Hero() {
   const [loadVideo, setLoadVideo] = useState(false)
 
   useEffect(() => {
+    // 小屏设备不加载 28MB 的 hero 视频：节省移动流量，同时避免移动端
+    // 浏览器（尤其微信内置）在滚动时持续解码大视频导致卡顿、滚动位置异常
+    if (window.matchMedia('(max-width: 767px)').matches) return
     const timer = window.setTimeout(() => setLoadVideo(true), 900)
     return () => window.clearTimeout(timer)
   }, [])
@@ -859,6 +862,7 @@ export default function App() {
     parallaxItems.forEach((item) => parallaxObserver.observe(item))
 
     let frame
+    let currentActive = 'top'
     const updateScrollEffects = () => {
       cancelAnimationFrame(frame)
       frame = requestAnimationFrame(() => {
@@ -869,7 +873,10 @@ export default function App() {
           (current, section) => section.getBoundingClientRect().top <= window.innerHeight * 0.38 ? section.id : current,
           'top',
         )
-        setActiveSection(active)
+        if (active !== currentActive) {
+          currentActive = active
+          setActiveSection(active)
+        }
         visibleParallaxItems.forEach((item) => {
           const rect = item.getBoundingClientRect()
           const offset = Math.max(-1, Math.min(1, (rect.top + rect.height / 2 - window.innerHeight / 2) / window.innerHeight))
@@ -886,6 +893,37 @@ export default function App() {
       parallaxObserver.disconnect()
       cancelAnimationFrame(frame)
       window.removeEventListener('scroll', updateScrollEffects)
+    }
+  }, [])
+
+  // 滚动位置守护：部分手机浏览器（尤其微信内置）在滚动到视频密集区域时
+  // 会把滚动位置异常重置回顶部。这里检测"单帧内从高处瞬间掉回顶部"的异常
+  // 跳变（正常滚动/惯性回顶不会出现），并立即把用户拉回原位置。
+  useEffect(() => {
+    let lastY = window.scrollY
+    let ignoreUntil = 0
+
+    const markIgnore = () => { ignoreUntil = Date.now() + 1800 }
+    const onClickCapture = (event) => {
+      if (event.target.closest && event.target.closest('a[href^="#"]')) markIgnore()
+    }
+    window.addEventListener('hashchange', markIgnore)
+    document.addEventListener('click', onClickCapture, { capture: true })
+
+    const onScroll = () => {
+      const y = window.scrollY
+      if (lastY - y > 400 && Date.now() > ignoreUntil) {
+        window.scrollTo({ top: lastY, behavior: 'auto' })
+        return
+      }
+      lastY = y
+    }
+    window.addEventListener('scroll', onScroll, { passive: true })
+
+    return () => {
+      window.removeEventListener('hashchange', markIgnore)
+      document.removeEventListener('click', onClickCapture, { capture: true })
+      window.removeEventListener('scroll', onScroll)
     }
   }, [])
 
