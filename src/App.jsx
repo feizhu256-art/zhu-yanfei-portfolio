@@ -731,55 +731,63 @@ function Skills() {
 }
 
 function MusicControl() {
-  const iframeRef = useRef(null)
-  const widgetRef = useRef(null)
+  const audioRef = useRef(null)
   const [playing, setPlaying] = useState(false)
   const [ready, setReady] = useState(false)
   const [volume, setVolume] = useState(0.18)
 
-  const toggleMusic = () => playing ? widgetRef.current?.pause() : widgetRef.current?.play()
+  const toggleMusic = () => {
+    const audio = audioRef.current
+    if (!audio) return
+    if (playing) {
+      audio.pause()
+    } else {
+      const playPromise = audio.play()
+      if (playPromise && typeof playPromise.then === 'function') {
+        playPromise.then(() => setReady(true)).catch(() => {})
+      } else {
+        setReady(true)
+      }
+    }
+  }
 
   useEffect(() => {
-    widgetRef.current?.setVolume(volume * 100)
+    const audio = audioRef.current
+    if (!audio) return
+    audio.volume = volume
   }, [volume])
 
   useEffect(() => {
-    const connect = () => {
-      if (!window.SC || !iframeRef.current) return
-      const widget = window.SC.Widget(iframeRef.current)
-      widgetRef.current = widget
-      widget.bind(window.SC.Widget.Events.READY, () => {
-        widget.setVolume(volume * 100)
-        setReady(true)
-      })
-      widget.bind(window.SC.Widget.Events.PLAY, () => setPlaying(true))
-      widget.bind(window.SC.Widget.Events.PAUSE, () => setPlaying(false))
-      widget.bind(window.SC.Widget.Events.FINISH, () => widget.play())
+    const audio = audioRef.current
+    if (!audio) return
+    const onCanPlay = () => setReady(true)
+    const onPlay = () => setPlaying(true)
+    const onPause = () => setPlaying(false)
+    const onEnded = () => {
+      audio.currentTime = 0
+      const playPromise = audio.play()
+      if (playPromise && typeof playPromise.then === 'function') playPromise.catch(() => {})
     }
-
-    const existing = document.querySelector('script[data-soundcloud-widget]')
-    if (existing) {
-      if (window.SC) connect()
-      else existing.addEventListener('load', connect, { once: true })
-      return
+    audio.addEventListener('canplay', onCanPlay)
+    audio.addEventListener('play', onPlay)
+    audio.addEventListener('pause', onPause)
+    audio.addEventListener('ended', onEnded)
+    return () => {
+      audio.removeEventListener('canplay', onCanPlay)
+      audio.removeEventListener('play', onPlay)
+      audio.removeEventListener('pause', onPause)
+      audio.removeEventListener('ended', onEnded)
     }
-
-    const script = document.createElement('script')
-    script.src = 'https://w.soundcloud.com/player/api.js'
-    script.async = true
-    script.dataset.soundcloudWidget = ''
-    script.addEventListener('load', connect, { once: true })
-    document.head.appendChild(script)
   }, [])
 
   return (
     <div className="music-control" title="Happy Cooking — Kirara Magic">
-      <iframe
-        ref={iframeRef}
+      <audio
+        ref={audioRef}
         className="music-control__source"
-        title="Happy Cooking — Kirara Magic"
-        src={`https://w.soundcloud.com/player/?url=${encodeURIComponent('https://soundcloud.com/kiraramagic/happy-cooking')}&auto_play=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false&visual=false`}
-        allow="autoplay"
+        src="https://zhu-yanfei-videos-1465406041.cos.ap-guangzhou.myqcloud.com/happy-cooking.mp3"
+        preload="auto"
+        loop
       />
       <button type="button" onClick={toggleMusic} disabled={!ready} aria-label={playing ? '暂停 Happy Cooking' : '播放 Happy Cooking'} aria-pressed={playing}>
         <svg viewBox="0 0 24 24" aria-hidden="true">
