@@ -851,6 +851,23 @@ function Contact() {
 export default function App() {
   const [activeSection, setActiveSection] = useState('top')
 
+  // 图片/视频从 COS 加载失败时，自动回退到 Vercel 本地副本，保证任何网络都能显示
+  useEffect(() => {
+    const onMediaError = (event) => {
+      const el = event.target
+      if (!el || !el.src || el.dataset.fallback) return
+      if ((el.tagName === 'IMG' || el.tagName === 'VIDEO') && el.src.includes('cos.ap-guangzhou')) {
+        const assetPath = el.src.split('/assets/')[1]
+        if (assetPath) {
+          el.dataset.fallback = '1'
+          el.src = BASE_URL + 'assets/' + assetPath
+        }
+      }
+    }
+    document.addEventListener('error', onMediaError, true)
+    return () => document.removeEventListener('error', onMediaError, true)
+  }, [])
+
   useEffect(() => {
     const revealItems = [...document.querySelectorAll('[data-reveal]')]
     const parallaxItems = [...document.querySelectorAll('[data-parallax]')]
