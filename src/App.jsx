@@ -186,7 +186,7 @@ const planningProjects = [
     meta: '品牌洞察 / 整合营销 / 数字互动 / 媒介预算',
     award: '敦煌文化 IP × 养元青 · 预热、爆破、长尾三阶段传播',
     description:
-      '围绕 Z 世代脱发焦虑构建“404 青丝”传播符号，策划品牌短片、高校 H5、AR 互动、感应壁画与游戏小程序，并完成媒介排期与预算整合。',
+      '围绕 Z 世代脱发焦虑构建“404 青丝”传播符号，负责宣传策划并输出包含品牌短片、高校 H5、AR 互动、感应壁画与游戏小程序在内的整合方案，完成媒介排期与预算整合。其中 H5、AR 互动等数字互动形式为方案预想，未实际落地执行。',
     image: COS_BASE + '/assets/planning/404-10.webp',
     gallery: [
       COS_BASE + '/assets/planning/404-10.webp',
@@ -247,7 +247,6 @@ const planningProjects = [
       COS_BASE + '/assets/planning/float-06.webp',
       COS_BASE + '/assets/planning/float-08.webp',
       COS_BASE + '/assets/planning/float-10.webp',
-      COS_BASE + '/assets/planning/float-14.webp',
     ],
     alt: '悬浮智库项目负责人、核心功能、学习场景与商业模式内页',
     className: 'project-card--wide project-card--reverse',
@@ -431,9 +430,6 @@ function Hero() {
           <span className="hero-portrait-halo" aria-hidden="true" />
           <DepthCarousel items={[
             { image: COS_BASE + '/assets/portrait-lifestyle.webp', alt: '朱彦霏手持相机的生活照片', position: 'center 45%' },
-            { image: COS_BASE + '/assets/hero-photo-1.webp', alt: '朱彦霏在湖边张开双臂', position: 'center 46%' },
-            { image: COS_BASE + '/assets/hero-photo-2.webp', alt: '朱彦霏在树荫下的生活照片', position: 'center 42%' },
-            { image: COS_BASE + '/assets/hero-photo-3.webp', alt: '朱彦霏在雪山前的冬日照片', position: '56% center' },
           ]} />
         </div>
         <Clothesline className="hero-clothesline" />
