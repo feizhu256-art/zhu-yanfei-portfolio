@@ -6,6 +6,7 @@ import BorderGlow from './components/BorderGlow'
 import DepthCarousel from './components/DepthCarousel'
 
 const BASE_URL = import.meta.env.BASE_URL
+const COS_BASE = 'https://zhu-yanfei-videos-1465406041.cos.ap-guangzhou.myqcloud.com'
 const Grainient = lazy(() => import('./components/Grainient'))
 
 const experiences = [
@@ -48,11 +49,11 @@ const projects = [
     award: '代表内容最高播放量 8,985',
     description:
       '围绕大学生活、成长规划和经验避坑策划内容，以统一的粉色 IP 形象和标题模板建立账号识别度。',
-    image: BASE_URL + 'assets/gallery/douyin-content-feed-new.jpg',
+    image: COS_BASE + '/assets/gallery/douyin-content-feed-new.jpg',
     gallery: [
-      BASE_URL + 'assets/gallery/douyin-content-feed-new.jpg',
-      BASE_URL + 'assets/gallery/douyin-content-detail.png',
-      BASE_URL + 'assets/gallery/douyin-content-detail-new.jpg',
+      COS_BASE + '/assets/gallery/douyin-content-feed-new.jpg',
+      COS_BASE + '/assets/gallery/douyin-content-detail.png',
+      COS_BASE + '/assets/gallery/douyin-content-detail-new.jpg',
     ],
     alt: '抖音大学生干货分享账号作品截图',
     className: 'project-card--phone',
@@ -64,10 +65,10 @@ const projects = [
     award: '单篇最高浏览量 7,846 · 最高点赞 167 · 最高收藏 133',
     description:
       '围绕社交话术、解压方式、个性签名及生活娱乐等方向搭建内容矩阵，通过统一萌系 IP、洋红色标题栏与情绪化封面形成账号视觉识别。',
-    image: BASE_URL + 'assets/xiaohongshu-content-account.jpg',
+    image: COS_BASE + '/assets/xiaohongshu-content-account.jpg',
     gallery: [
-      BASE_URL + 'assets/gallery/xhs-content-01.png',
-      BASE_URL + 'assets/gallery/xhs-content-replies.png',
+      COS_BASE + '/assets/gallery/xhs-content-01.png',
+      COS_BASE + '/assets/gallery/xhs-content-replies.png',
     ],
     alt: '小红书生活干货分享账号作品截图',
     className: 'project-card--phone project-card--reverse',
@@ -79,8 +80,8 @@ const projects = [
     award: '账号粉丝 1,194 · 点赞与收藏 870',
     description:
       '独立完成好物内容生产与日常维护，通过复盘笔记互动数据持续迭代选题方向和内容表达。',
-    image: BASE_URL + 'assets/xiaohongshu-goods-operation.png',
-    gallery: [BASE_URL + 'assets/gallery/xhs-goods-01.jpeg', BASE_URL + 'assets/gallery/xhs-goods-02.jpeg'],
+    image: COS_BASE + '/assets/xiaohongshu-goods-operation.png',
+    gallery: [COS_BASE + '/assets/gallery/xhs-goods-01.jpeg', COS_BASE + '/assets/gallery/xhs-goods-02.jpeg'],
     alt: '小红书个人好物账号运营作品展示',
     className: 'project-card--wide',
   },
@@ -91,11 +92,11 @@ const projects = [
     award: '单条最高播放量 1.7 万 · 账号获赞 1,431',
     description:
       '围绕影视娱乐热点进行选题，完成素材筛选、二次剪辑、文案改编及发布，根据播放与互动表现持续调整内容方向。',
-    image: BASE_URL + 'assets/douyin-remix-operation.png',
+    image: COS_BASE + '/assets/douyin-remix-operation.png',
     gallery: [
-      BASE_URL + 'assets/gallery/douyin-remix-01.jpeg',
-      BASE_URL + 'assets/gallery/douyin-remix-02.jpeg',
-      BASE_URL + 'assets/gallery/douyin-remix-03.jpeg',
+      COS_BASE + '/assets/gallery/douyin-remix-01.jpeg',
+      COS_BASE + '/assets/gallery/douyin-remix-02.jpeg',
+      COS_BASE + '/assets/gallery/douyin-remix-03.jpeg',
     ],
     alt: '抖音短视频二创账号运营作品展示',
     className: 'project-card--wide',
@@ -107,11 +108,11 @@ const projects = [
     award: '单篇最高阅读量 3,674 · 多篇内容获得推荐',
     description:
       '自主运营美食分享公众号，依据内容表现持续调整选题、图文节奏与发布策略。',
-    image: BASE_URL + 'assets/wechat-food-operation.png',
+    image: COS_BASE + '/assets/wechat-food-operation.png',
     gallery: [
-      BASE_URL + 'assets/gallery/wechat-food-01.jpeg',
-      BASE_URL + 'assets/gallery/wechat-food-02.png',
-      BASE_URL + 'assets/gallery/wechat-food-03.png',
+      COS_BASE + '/assets/gallery/wechat-food-01.jpeg',
+      COS_BASE + '/assets/gallery/wechat-food-02.png',
+      COS_BASE + '/assets/gallery/wechat-food-03.png',
     ],
     alt: '美食公众号运营作品与阅读数据展示',
     className: 'project-card--wide',
@@ -123,8 +124,8 @@ const projects = [
     award: '安全知识问卷正确率提升 25% · 复用于季度安全宣传',
     description:
       '为企业内部消防活动完成横幅、展板与知识材料的全流程视觉设计，统一现场传播信息。',
-    image: BASE_URL + 'assets/fire-safety-design.png',
-    gallery: [BASE_URL + 'assets/gallery/fire-design-01.jpeg', BASE_URL + 'assets/gallery/fire-design-02.jpeg'],
+    image: COS_BASE + '/assets/fire-safety-design.png',
+    gallery: [COS_BASE + '/assets/gallery/fire-design-01.jpeg', COS_BASE + '/assets/gallery/fire-design-02.jpeg'],
     alt: '消防主题宣传展板设计作品',
     className: 'project-card--wide',
   },
@@ -135,8 +136,8 @@ const projects = [
     award: '统一萌系人物 IP 与系列化健康知识版式',
     description:
       '围绕颈椎舒缓与阳虚体质等主题组织科普信息，完成人物视觉、知识结构和长图排版。',
-    image: BASE_URL + 'assets/wellness-xhs-design.png',
-    gallery: [BASE_URL + 'assets/gallery/wellness-01.jpeg', BASE_URL + 'assets/gallery/wellness-02.jpeg'],
+    image: COS_BASE + '/assets/wellness-xhs-design.png',
+    gallery: [COS_BASE + '/assets/gallery/wellness-01.jpeg', COS_BASE + '/assets/gallery/wellness-02.jpeg'],
     alt: '小红书养生主题科普长图作品',
     className: 'project-card--wide',
   },
@@ -150,11 +151,11 @@ const aiProjects = [
     description:
       '从个人求职与作品展示需求出发，自主规划网站信息架构、内容模块与视觉方向，通过 Codex 辅助完成页面搭建，并根据实际展示效果持续优化内容结构与交互体验。',
     process: ['需求构思', '找视觉参考', '规划模块', 'Codex实现', '测试', '反馈修改', '最终页面'],
-    image: BASE_URL + 'assets/ai/portfolio-home.jpg',
+    image: COS_BASE + '/assets/ai/portfolio-home.jpg',
     gallery: [
-      BASE_URL + 'assets/ai/portfolio-home.jpg',
-      BASE_URL + 'assets/ai/codex-conversation.webp',
-      BASE_URL + 'assets/ai/resume-to-website.webp',
+      COS_BASE + '/assets/ai/portfolio-home.jpg',
+      COS_BASE + '/assets/ai/codex-conversation.webp',
+      COS_BASE + '/assets/ai/resume-to-website.webp',
     ],
     alt: 'AI 辅助个人作品集网站搭建与迭代过程',
     className: 'project-card--wide',
@@ -165,14 +166,14 @@ const aiProjects = [
     award: '集成学习管理、简历投递、习惯打卡与内容运营等多场景功能',
     description:
       '围绕个人学习、求职、运动与内容运营等日常需求，自主规划功能模块与使用流程，借助 AI 工具完成个人效率工作台搭建，并根据实际使用需求持续调整功能与交互。',
-    image: BASE_URL + 'assets/ai/workbuddy-01.webp',
+    image: COS_BASE + '/assets/ai/workbuddy-01.webp',
     gallery: [
-      BASE_URL + 'assets/ai/workbuddy-01.webp',
-      BASE_URL + 'assets/ai/workbuddy-02.webp',
-      BASE_URL + 'assets/ai/workbuddy-03.webp',
-      BASE_URL + 'assets/ai/workbuddy-04.webp',
-      BASE_URL + 'assets/ai/workbuddy-05.webp',
-      BASE_URL + 'assets/ai/workbuddy-06.webp',
+      COS_BASE + '/assets/ai/workbuddy-01.webp',
+      COS_BASE + '/assets/ai/workbuddy-02.webp',
+      COS_BASE + '/assets/ai/workbuddy-03.webp',
+      COS_BASE + '/assets/ai/workbuddy-04.webp',
+      COS_BASE + '/assets/ai/workbuddy-05.webp',
+      COS_BASE + '/assets/ai/workbuddy-06.webp',
     ],
     alt: 'AI 个人效率工作台功能界面',
     className: 'project-card--wide project-card--reverse',
@@ -186,13 +187,13 @@ const planningProjects = [
     award: '敦煌文化 IP × 养元青 · 预热、爆破、长尾三阶段传播',
     description:
       '围绕 Z 世代脱发焦虑构建“404 青丝”传播符号，策划品牌短片、高校 H5、AR 互动、感应壁画与游戏小程序，并完成媒介排期与预算整合。',
-    image: BASE_URL + 'assets/planning/404-10.webp',
+    image: COS_BASE + '/assets/planning/404-10.webp',
     gallery: [
-      BASE_URL + 'assets/planning/404-10.webp',
-      BASE_URL + 'assets/planning/404-12.webp',
-      BASE_URL + 'assets/planning/404-14.webp',
-      BASE_URL + 'assets/planning/404-18.webp',
-      BASE_URL + 'assets/planning/404-24.webp',
+      COS_BASE + '/assets/planning/404-10.webp',
+      COS_BASE + '/assets/planning/404-12.webp',
+      COS_BASE + '/assets/planning/404-14.webp',
+      COS_BASE + '/assets/planning/404-18.webp',
+      COS_BASE + '/assets/planning/404-24.webp',
     ],
     alt: '404 青丝计划品牌洞察、传播节奏与互动方案内页',
     className: 'project-card--wide',
@@ -203,14 +204,14 @@ const planningProjects = [
     award: '负责 02 营销策划：预热期、爆发期、延续期',
     description:
       '负责营销策划板块，设计悬念海报解谜、KOL 情感诊断、草本闯关、AI 笑容能量挑战、牙科联名及公益守护等分阶段活动。',
-    image: BASE_URL + 'assets/planning/naes-02.webp',
+    image: COS_BASE + '/assets/planning/naes-02.webp',
     gallery: [
-      BASE_URL + 'assets/planning/naes-02.webp',
-      BASE_URL + 'assets/planning/naes-11.webp',
-      BASE_URL + 'assets/planning/naes-12.webp',
-      BASE_URL + 'assets/planning/naes-14.webp',
-      BASE_URL + 'assets/planning/naes-15.webp',
-      BASE_URL + 'assets/planning/naes-16.webp',
+      COS_BASE + '/assets/planning/naes-02.webp',
+      COS_BASE + '/assets/planning/naes-11.webp',
+      COS_BASE + '/assets/planning/naes-12.webp',
+      COS_BASE + '/assets/planning/naes-14.webp',
+      COS_BASE + '/assets/planning/naes-15.webp',
+      COS_BASE + '/assets/planning/naes-16.webp',
     ],
     alt: '纳爱斯草本护龈营销策划职责、活动地图与分阶段方案内页',
     className: 'project-card--wide project-card--reverse',
@@ -221,14 +222,14 @@ const planningProjects = [
     award: '主要项目负责人 · 大创广西区赛铜奖 · “挑战杯”广西区赛三等奖',
     description:
       '统筹任务分配与项目进度，组织用户需求调研，完成计划书、需求分析报告和路演 PPT，并负责方案汇报与答辩协同。',
-    image: BASE_URL + 'assets/planning/silver-01.webp',
+    image: COS_BASE + '/assets/planning/silver-01.webp',
     gallery: [
-      BASE_URL + 'assets/planning/silver-01.webp',
-      BASE_URL + 'assets/planning/silver-05.webp',
-      BASE_URL + 'assets/planning/silver-06.webp',
-      BASE_URL + 'assets/planning/silver-07.webp',
-      BASE_URL + 'assets/planning/silver-09.webp',
-      BASE_URL + 'assets/planning/silver-20.webp',
+      COS_BASE + '/assets/planning/silver-01.webp',
+      COS_BASE + '/assets/planning/silver-05.webp',
+      COS_BASE + '/assets/planning/silver-06.webp',
+      COS_BASE + '/assets/planning/silver-07.webp',
+      COS_BASE + '/assets/planning/silver-09.webp',
+      COS_BASE + '/assets/planning/silver-20.webp',
     ],
     alt: '银龄智环项目负责人、用户痛点、解决方案与项目流程内页',
     className: 'project-card--wide',
@@ -239,14 +240,14 @@ const planningProjects = [
     award: '主要项目负责人 · 广西大学生计算机设计大赛区赛三等奖',
     description:
       '担任项目负责人，统筹 AI 多感互动学习磁悬浮地球仪的方案梳理与路演呈现，围绕多感交互、3D 投影及 AI 辩论助手等功能组织教育场景与商业模式表达。',
-    image: BASE_URL + 'assets/planning/float-01.webp',
+    image: COS_BASE + '/assets/planning/float-01.webp',
     gallery: [
-      BASE_URL + 'assets/planning/float-01.webp',
-      BASE_URL + 'assets/planning/float-05.webp',
-      BASE_URL + 'assets/planning/float-06.webp',
-      BASE_URL + 'assets/planning/float-08.webp',
-      BASE_URL + 'assets/planning/float-10.webp',
-      BASE_URL + 'assets/planning/float-14.webp',
+      COS_BASE + '/assets/planning/float-01.webp',
+      COS_BASE + '/assets/planning/float-05.webp',
+      COS_BASE + '/assets/planning/float-06.webp',
+      COS_BASE + '/assets/planning/float-08.webp',
+      COS_BASE + '/assets/planning/float-10.webp',
+      COS_BASE + '/assets/planning/float-14.webp',
     ],
     alt: '悬浮智库项目负责人、核心功能、学习场景与商业模式内页',
     className: 'project-card--wide project-card--reverse',
@@ -277,21 +278,21 @@ const workDirectories = [
 
 const videoCollections = [
   ['01', 'AI 创作', '生成式视觉与品牌短片', [
-    ['G-style', BASE_URL + 'assets/videos/ai-g-style.mp4'],
-    ['广西跑酷小游戏', BASE_URL + 'assets/videos/ai-parkour.mp4'],
-    ['领克 07GT', BASE_URL + 'assets/videos/ai-lynk-07gt.mp4'],
+    ['G-style', COS_BASE + '/assets/videos/ai-g-style.mp4'],
+    ['广西跑酷小游戏', COS_BASE + '/assets/videos/ai-parkour.mp4'],
+    ['领克 07GT', COS_BASE + '/assets/videos/ai-lynk-07gt.mp4'],
     ['一瓦一木', 'https://zhu-yanfei-videos-1465406041.cos.ap-guangzhou.myqcloud.com/ai-wood.mp4'],
   ]],
   ['02', '二创剪辑', '素材重组、节奏设计与情绪表达', [
-    ['二创作品 01', BASE_URL + 'assets/videos/remix-01.mp4'],
-    ['二创作品 02', BASE_URL + 'assets/videos/remix-02.mp4'],
-    ['二创作品 03', BASE_URL + 'assets/videos/remix-03.mp4'],
-    ['银河 E5', BASE_URL + 'assets/videos/remix-galaxy-e5.mp4'],
+    ['二创作品 01', COS_BASE + '/assets/videos/remix-01.mp4'],
+    ['二创作品 02', COS_BASE + '/assets/videos/remix-02.mp4'],
+    ['二创作品 03', COS_BASE + '/assets/videos/remix-03.mp4'],
+    ['银河 E5', COS_BASE + '/assets/videos/remix-galaxy-e5.mp4'],
   ]],
   ['03', '口播账号视频', '大学生活选题、文案与短视频包装', [
-    ['宿舍关系：边界感比搞好关系重要', BASE_URL + 'assets/videos/talk-dorm.mp4'],
+    ['宿舍关系：边界感比搞好关系重要', COS_BASE + '/assets/videos/talk-dorm.mp4'],
     ['大一最容易挂的课', 'https://zhu-yanfei-videos-1465406041.cos.ap-guangzhou.myqcloud.com/talk-failed-courses.mp4'],
-    ['社团和学生会到底要不要加？', BASE_URL + 'assets/videos/talk-clubs.mp4'],
+    ['社团和学生会到底要不要加？', COS_BASE + '/assets/videos/talk-clubs.mp4'],
     ['实习、竞赛、科研、交换到底怎么选？', 'https://zhu-yanfei-videos-1465406041.cos.ap-guangzhou.myqcloud.com/talk-opportunity-choice.mp4'],
   ]],
   ['04', '微电影与短片', '叙事剪辑、音乐节奏与情绪氛围', [
@@ -358,7 +359,7 @@ function Header({ activeSection }) {
         animationTime={520}
         timeVariance={180}
       />
-      <a className="header-resume" href={BASE_URL + "assets/zhu-yanfei-resume.pdf"} download>
+      <a className="header-resume" href={COS_BASE + "/assets/zhu-yanfei-resume.pdf"} download>
         简历.pdf <ArrowIcon />
       </a>
     </header>
@@ -415,7 +416,7 @@ function Hero() {
           </div>
           <div className="hero-actions">
             <BorderGlow className="action-glow">
-              <a className="button-link" href={BASE_URL + "assets/zhu-yanfei-resume.pdf"} download>
+              <a className="button-link" href={COS_BASE + "/assets/zhu-yanfei-resume.pdf"} download>
                 下载简历 <ArrowIcon />
               </a>
             </BorderGlow>
@@ -429,10 +430,10 @@ function Hero() {
         <div className="hero-portrait">
           <span className="hero-portrait-halo" aria-hidden="true" />
           <DepthCarousel items={[
-            { image: BASE_URL + 'assets/portrait-lifestyle.webp', alt: '朱彦霏手持相机的生活照片', position: 'center 45%' },
-            { image: BASE_URL + 'assets/hero-photo-1.webp', alt: '朱彦霏在湖边张开双臂', position: 'center 46%' },
-            { image: BASE_URL + 'assets/hero-photo-2.webp', alt: '朱彦霏在树荫下的生活照片', position: 'center 42%' },
-            { image: BASE_URL + 'assets/hero-photo-3.webp', alt: '朱彦霏在雪山前的冬日照片', position: '56% center' },
+            { image: COS_BASE + '/assets/portrait-lifestyle.webp', alt: '朱彦霏手持相机的生活照片', position: 'center 45%' },
+            { image: COS_BASE + '/assets/hero-photo-1.webp', alt: '朱彦霏在湖边张开双臂', position: 'center 46%' },
+            { image: COS_BASE + '/assets/hero-photo-2.webp', alt: '朱彦霏在树荫下的生活照片', position: 'center 42%' },
+            { image: COS_BASE + '/assets/hero-photo-3.webp', alt: '朱彦霏在雪山前的冬日照片', position: '56% center' },
           ]} />
         </div>
         <Clothesline className="hero-clothesline" />
