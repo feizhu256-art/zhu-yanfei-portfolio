@@ -87,11 +87,13 @@ export default function DepthCarousel({ items, className = '' }) {
         })}
       </div>
 
-      <div className="depth-carousel__controls">
-        <button type="button" aria-label="上一张照片" onClick={() => move(-1)}>←</button>
-        <span>{String(active + 1).padStart(2, '0')} / {String(count).padStart(2, '0')}</span>
-        <button type="button" aria-label="下一张照片" onClick={() => move(1)}>→</button>
-      </div>
+      {count > 1 && (
+        <div className="depth-carousel__controls">
+          <button type="button" aria-label="上一张照片" onClick={() => move(-1)}>←</button>
+          <span>{String(active + 1).padStart(2, '0')} / {String(count).padStart(2, '0')}</span>
+          <button type="button" aria-label="下一张照片" onClick={() => move(1)}>→</button>
+        </div>
+      )}
     </div>
   )
 }

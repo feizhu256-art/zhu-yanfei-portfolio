@@ -920,7 +920,13 @@ export default function App() {
   // 滚动位置守护：部分手机浏览器（尤其微信内置）在滚动到视频密集区域时
   // 会把滚动位置异常重置回顶部。这里检测"单帧内从高处瞬间掉回顶部"的异常
   // 跳变（正常滚动/惯性回顶不会出现），并立即把用户拉回原位置。
+  // 只在微信内置浏览器或移动端 WebView 中启用，避免桌面端正常滚动被误判为异常跳变。
   useEffect(() => {
+    const ua = navigator.userAgent.toLowerCase()
+    const isWechat = /micromessenger/.test(ua)
+    const isMobileWebview = /iphone|android/.test(ua) && !/(safari|chrome|firefox|edge)/.test(ua)
+    if (!isWechat && !isMobileWebview) return
+
     let lastY = window.scrollY
     let ignoreUntil = 0
 
