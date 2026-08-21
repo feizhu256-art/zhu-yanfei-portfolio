@@ -800,35 +800,33 @@ function Contact() {
   return (
     <section className="contact" id="contact" data-reveal>
       <div className="page-shell contact-shell">
-        <span className="contact-label">LET&apos;S WORK TOGETHER / 联系</span>
+        <span className="contact-label">CONTACT / 联系我</span>
         <h2>
-          期待与你一起，
+          期待用内容、营销与产品能力，
           <br />
-          把好内容做得更有影响力。
+          加入合适的团队。
         </h2>
-        <p>如果你正在寻找新媒体运营 / 内容运营伙伴，欢迎联系我。</p>
+        <p>我的求职方向：新媒体运营 · 品牌营销 · 产品运营 · 跨境内容</p>
         <div className="contact-actions">
           <BorderGlow className="action-glow">
-            <a className="button-link" href="mailto:2244391427@qq.com">
+            <a
+              className="button-link"
+              href="https://mail.qq.com/cgi-bin/frame_html?action=compose&to=2244391427@qq.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               发送邮件 <ArrowIcon />
             </a>
           </BorderGlow>
-          <BorderGlow className="action-glow">
-            <a className="button-link button-link--ghost" href="tel:19317152889">
-              电话联系
-              <svg viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M7 3h3l1 5-2 1c1 3 3 5 6 6l1-2 5 1v3c0 2-2 4-4 4C9 20 4 15 3 7c0-2 2-4 4-4Z" />
-              </svg>
-            </a>
-          </BorderGlow>
         </div>
+        <p className="contact-note">或复制邮箱：2244391427@qq.com</p>
         <Clothesline className="contact-line" />
         <CloudDoodle className="contact-cloud" />
         <footer>
           <a className="wordmark" href="#top">
             ZHU YANFEI<span>+</span>
           </a>
-          <span>NEW MEDIA &amp; CONTENT OPERATIONS</span>
+          <span>CONTENT · MARKETING · PRODUCT</span>
         </footer>
       </div>
     </section>

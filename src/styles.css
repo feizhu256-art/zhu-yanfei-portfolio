@@ -1112,6 +1112,12 @@ svg {
   margin-top: 50px;
 }
 
+.contact > .page-shell > .contact-note {
+  margin-top: 16px;
+  font-size: 0.95rem;
+  opacity: 0.62;
+}
+
 .button-link--ghost {
   border-style: dashed;
 }
