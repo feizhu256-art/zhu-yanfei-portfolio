@@ -802,7 +802,9 @@ function Contact() {
       <div className="page-shell contact-shell">
         <span className="contact-label">CONTACT / 联系我</span>
         <h2>
-          期待用内容、营销与产品能力，
+          期待用内容、
+          <br />
+          营销与产品能力，
           <br />
           加入合适的团队。
         </h2>
