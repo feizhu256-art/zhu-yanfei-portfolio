@@ -357,9 +357,6 @@ function Header({ activeSection }) {
         animationTime={520}
         timeVariance={180}
       />
-      <a className="header-resume" href={COS_BASE + "/assets/zhu-yanfei-resume.pdf"} download>
-        简历.pdf <ArrowIcon />
-      </a>
     </header>
   )
 }
@@ -413,11 +410,6 @@ function Hero() {
             <span>AI应用</span>
           </div>
           <div className="hero-actions">
-            <BorderGlow className="action-glow">
-              <a className="button-link" href={COS_BASE + "/assets/zhu-yanfei-resume.pdf"} download>
-                下载简历 <ArrowIcon />
-              </a>
-            </BorderGlow>
             <BorderGlow className="action-glow">
               <a className="button-link button-link--ghost button-link--down" href="#works">
                 查看作品 <ArrowIcon />

@@ -1441,20 +1441,6 @@ svg {
 }
 
 /* Layout repair: prevent orphaned Chinese characters and use the requested split hero. */
-.header-resume {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  margin-left: auto;
-  padding: 9px 14px;
-  border: 1px solid rgba(7, 19, 31, 0.18);
-  border-radius: 999px;
-  font-size: 0.78rem;
-  font-weight: 700;
-  background: rgba(255, 255, 255, 0.46);
-}
-
-.header-resume svg,
 .profile-draw button svg {
   width: 16px;
   fill: none;
@@ -1734,10 +1720,6 @@ svg {
 }
 
 @media (max-width: 900px) {
-  .header-resume {
-    display: none;
-  }
-
   .hero-copy {
     top: 126px;
     width: calc(100% - (var(--page-pad) * 2));
