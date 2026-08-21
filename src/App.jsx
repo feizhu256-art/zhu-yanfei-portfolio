@@ -204,16 +204,15 @@ const planningProjects = [
     award: '负责 02 营销策划：预热期、爆发期、延续期',
     description:
       '负责营销策划板块，设计悬念海报解谜、KOL 情感诊断、草本闯关、AI 笑容能量挑战、牙科联名及公益守护等分阶段活动。',
-    image: COS_BASE + '/assets/planning/naes-02.webp',
+    image: COS_BASE + '/assets/planning/naes-11.webp',
     gallery: [
-      COS_BASE + '/assets/planning/naes-02.webp',
       COS_BASE + '/assets/planning/naes-11.webp',
       COS_BASE + '/assets/planning/naes-12.webp',
       COS_BASE + '/assets/planning/naes-14.webp',
       COS_BASE + '/assets/planning/naes-15.webp',
       COS_BASE + '/assets/planning/naes-16.webp',
     ],
-    alt: '纳爱斯草本护龈营销策划职责、活动地图与分阶段方案内页',
+    alt: '纳爱斯草本护龈营销策划活动地图与分阶段方案内页',
     className: 'project-card--wide project-card--reverse',
   },
   {
